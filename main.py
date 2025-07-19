@@ -36,6 +36,10 @@ def main():
             if ast.collide(newplayer):
                 print("Game Over!")
                 sys.exit(0)
+            for bullet in shots:
+                if ast.collide(bullet):
+                    bullet.kill()
+                    ast.split()
         screen.fill("black")
         for object in drawable:
             object.draw(screen)
